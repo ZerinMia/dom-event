@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new comment</title>
+    <style>
+        h1 {
+            color: orangered;
+        }
+
+        h2 {
+            color: orange;
+        }
+
+        #comment-button {
+            background-color: orange;
+            border: none;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>New Comment</h2>
+    <h1>Add Your Comment Please!!!</h1>
+    <h4>Your Comment Box Bellow</h4>
+    <section>
+        <div id="paragraph-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem harum, officia quas corrupti
+                deleniti optio maiores id, pariatur, iure ipsam natus. Impedit praesentium unde rerum? Repellat dolore
+                perferendis placeat quo.</p>
+            <p>A aut iusto vel id minima. Nobis minima molestias minus ipsa magni porro? Molestias porro iusto aperiam
+                rem nam nemo, amet laborum tempora necessitatibus illum fugit sunt nulla dolorum veritatis!</p>
+            <p>Necessitatibus quos earum laudantium nostrum iure, dignissimos nobis asperiores in, eaque dolores
+                temporibus. Numquam, optio aperiam earum sit praesentium ipsam libero quibusdam quod delectus
+                perspiciatis ducimus molestiae et iusto voluptate.</p>
+        </div>
+        <div>
+            <textarea name="" id="comment-box" cols="50" rows="4"></textarea>
+            <br>
+            <button id="comment-button">comment</button>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('comment-button').addEventListener('click', function () {
+            const connection = document.getElementById('comment-box');
+
+            //step2: creat paragraph
+            const newPragraph = document.createElement('p');
+            newPragraph.innerText = connection.value;
+
+            //step3: append the element
+            const append = document.getElementById('paragraph-container');
+            append.appendChild(newPragraph);
+            //step4: clean comment box
+            connection.value = '';
+        })
+    </script>
+
+</body>
+
+</html>
